@@ -1,24 +1,25 @@
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # BOT_TOKEN = os.environ.get("BOT_TOKEN", "")
 # NEXTDNS_KEY = os.environ.get("NEXTDNS_KEY", "")
 
-BOT_TOKEN = ""
-NEXTDNS_KEY = "" 
-
+BOT_TOKEN   = os.getenv("BOT_TOKEN")
+NEXTDNS_KEY = os.getenv("NEXTDNS_KEY")
 
 TOKEN_SETS = [
-    
     {
-        "fetch_token": "",
-        "app_transaction": "",
+        "fetch_token": os.getenv("FETCH_TOKEN"),
+        "app_transaction": os.getenv("APP_TRANSACTION"),
         "hash_params": "",
         "hash_headers": "",
         "is_sandbox": False,
     },
 ]
 
-ADMIN_ID = 1234
+ADMIN_ID    = int(os.getenv("ADMIN_ID", 8373929944))
+
 NUM_WORKERS = 2
 DONATE_PHOTO = ""
 
